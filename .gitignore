@@ -1,0 +1,19 @@
+.env
+node_modules
+dist
+.DS_Store
+.vscode
+
+npm
+*.log
+yarn-error.log
+pnpm-debug.log*
+.pnpm-debug.log*
+
+# local env files
+.env.local
+.env.*.local
+.env.test.local
+.env.production.local   
+
+        

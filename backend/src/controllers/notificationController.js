@@ -1,8 +1,7 @@
  import Notification from "../models/notification.js";
  
-/**
- * 🔔 Create notification
- */
+// Create notification
+ 
 export const createNotification = async (req, res) => {
   try {
     const { receiver, message, type, link } = req.body;
@@ -62,9 +61,8 @@ export const markAsRead = async (req, res) => {
   }
 };
 
-/**
- * 🗑 Delete notification
- */
+// Delete notification
+ 
 export const deleteNotification = async (req, res) => {
   try {
     const notification = await Notification.findById(req.params.id);

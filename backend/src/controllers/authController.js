@@ -7,7 +7,7 @@ import {
 } from "../utils/token.js";
 import { sanitizeUser } from "../utils/sanitizeUser.js";
 
-// 🧹 Utility: handle validation results
+//  Utility: handle validation results
 const handleValidationErrors = (req, res, next) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -16,7 +16,7 @@ const handleValidationErrors = (req, res, next) => {
   next();
 };
 
-// 🧾 Validation middlewares
+//  Validation middlewares
 export const registerValidation = [
   body("name")
     .trim()
@@ -43,7 +43,7 @@ export const loginValidation = [
   handleValidationErrors,
 ];
 
-// 👤 Register Controller
+//  Register Controller
 export const registerUser = async (req, res) => {
   try {
     const { name, email, password, role } = req.body;
@@ -80,7 +80,7 @@ export const registerUser = async (req, res) => {
   }
 };
 
-// 🔐 Login Controller
+//  Login Controller
 export const login = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -111,7 +111,7 @@ export const login = async (req, res) => {
   }
 };
 
-// 🚪 Logout Controller
+//  Logout Controller
 export const logout = (req, res) => {
   try {
     clearTokenCookie(res);
@@ -128,7 +128,7 @@ export const logout = (req, res) => {
   }
 };
 
-// 🙋 Get Current User Controller
+//  Get Current User Controller
 export const getMe = async (req, res) => {
   try {
     const user = await User.findById(req.user._id);

@@ -4,7 +4,7 @@ import jwt from "jsonwebtoken";
 //   Protect  route
 
 export const authMiddleware = async (req, res, next) => {
-  // Accept cookie or Authorization: Bearer <token>
+  // Accept cookie or Authorization
   let token = null;
   if (req.cookies?.token) token = req.cookies.token;
   const authHeader = req.headers?.authorization;
@@ -51,5 +51,5 @@ export const authMiddleware = async (req, res, next) => {
   }
 };
 
-// Provide a `protect` alias for backward compatibility with routes importing `{ protect }`
+
 export const protect = authMiddleware;
